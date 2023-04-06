@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div>
+        <h1>Press below to verify your email.</h1>
+
+
+        <form action="/auth/users/activation" method="post">
+            {% csrf_token %}
+            <input id="uid" name="uid" type="text" value="">
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+    <script>
+        const pars = window.location.href.split('/')
+
+        const body = JSON.stringify({
+            uid: pars[4],
+            token: pars[5]
+        })
+
+
+        async function postData() {
+            console.log(body)
+
+            // Default options are marked with *
+            const response = await fetch('http://127.0.0.1:8000/auth/users/activation', {
+                method: "POST", // *GET, POST, PUT, DELETE, etc.
+                mode: "no-cors", // no-cors, *cors, same-origin
+                cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: "same-origin", // include, *same-origin, omit
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'DELETE, GET, OPTIONS, PATCH, POST, PUT',
+                    'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+                },
+                body: body, // body data type must match "Content-Type" header
+            });
+
+            console.log(response)
+            // parses JSON response into native JavaScript objects
+        }
+
+    </script>
+</body>
+
+</html>
