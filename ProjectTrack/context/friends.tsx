@@ -41,6 +41,8 @@ export function FriendProvider(props) {
     const [users, setUsers] = React.useState(undefined);
     const [status, setStatus] = React.useState(undefined)
 
+    const base_url = process.env.LOCAL_URL
+
     // React.useEffect(() => {
     //     AsyncStorage.getItem('projects').then((json) => {
 
@@ -64,7 +66,7 @@ export function FriendProvider(props) {
         //later on i will add migration to set relationship and who can view the project
         var config = {
             method: 'GET',
-            url: 'http://127.0.0.1:8000/friends/',
+            url: `${base_url}/friends/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -92,7 +94,7 @@ export function FriendProvider(props) {
         //later on i will add migration to set relationship and who can view the project
         var config = {
             method: 'GET',
-            url: 'http://127.0.0.1:8000/all-users/',
+            url: `${base_url}/all-users/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -119,7 +121,7 @@ export function FriendProvider(props) {
         //later on i will add migration to set relationship and who can view the project
         var config = {
             method: 'POST',
-            url: 'http://127.0.0.1:8000/add-friend/',
+            url: `${base_url}/add-friend/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -151,7 +153,7 @@ export function FriendProvider(props) {
         //later on i will add migration to set relationship and who can view the project
         var config = {
             method: 'POST',
-            url: 'http://127.0.0.1:8000/check-if-friend/',
+            url: `${base_url}/check-if-friend/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -184,7 +186,7 @@ export function FriendProvider(props) {
         //later on i will add migration to set relationship and who can view the project
         var config = {
             method: 'POST',
-            url: 'http://127.0.0.1:8000/accept-friend/',
+            url: `${base_url}/accept-friend/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -216,7 +218,7 @@ export function FriendProvider(props) {
         //later on i will add migration to set relationship and who can view the project
         var config = {
             method: 'POST',
-            url: 'http://127.0.0.1:8000/delete-friend/',
+            url: `${base_url}/delete-friend/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -248,7 +250,7 @@ export function FriendProvider(props) {
         //later on i will add migration to set relationship and who can view the project
         var config = {
             method: 'POST',
-            url: 'http://127.0.0.1:8000/decline-request/',
+            url: `${base_url}/decline-request/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -280,7 +282,7 @@ export function FriendProvider(props) {
         //later on i will add migration to set relationship and who can view the project
         var config = {
             method: 'POST',
-            url: 'http://127.0.0.1:8000/cancel-request/',
+            url: `${base_url}/cancel-request/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',

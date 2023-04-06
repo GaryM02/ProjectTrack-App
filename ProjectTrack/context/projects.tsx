@@ -39,6 +39,8 @@ export function ProjectProvider(props) {
     // const { getItem, setItem, removeItem } = useAsyncStorage("USER");
     const [projects, setProjects] = React.useState(undefined);
 
+    const base_url = process.env.LOCAL_URL
+
     // React.useEffect(() => {
     //     AsyncStorage.getItem('projects').then((json) => {
 
@@ -74,7 +76,7 @@ export function ProjectProvider(props) {
         }
         var config = {
             method: 'POST',
-            url: 'http://127.0.0.1:8000/createproject/',
+            url: `${base_url}/createproject/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -106,7 +108,7 @@ export function ProjectProvider(props) {
         //later on i will add migration to set relationship and who can view the project
         var config = {
             method: 'GET',
-            url: 'http://127.0.0.1:8000/projects/',
+            url: `${base_url}/projects/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -133,7 +135,7 @@ export function ProjectProvider(props) {
         console.log(id)
         var config = {
             method: 'POST',
-            url: 'http://127.0.0.1:8000/deleteproject/',
+            url: `${base_url}/deleteproject/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
