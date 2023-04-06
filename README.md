@@ -1,5 +1,13 @@
 # ProjectTrack
 
+Built with React Native and Django Rest Framework.
+
+# Features
+User Authentication,
+CRUD for users projects,
+Friendlist functionality,
+
+
 <img src="DemoImages/1.png" width="250" height="500">
 <img src="DemoImages/2.png" width="250" height="500">
 <img src="DemoImages/3.png" width="250" height="500">
