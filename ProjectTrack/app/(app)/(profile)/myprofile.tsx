@@ -22,7 +22,7 @@ const Myprofile = () => {
             </View>
         );
     } else {
-        return null
+        return <Text>No User</Text>
     }
 
 

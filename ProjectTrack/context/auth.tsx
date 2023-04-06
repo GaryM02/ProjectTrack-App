@@ -200,7 +200,7 @@ export function Provider(props) {
 
         var config = {
             method: 'GET',
-            url: `${base_url}/auth/users/me`,
+            url: `${base_url}/auth/users/me/`,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -270,5 +270,4 @@ export function Provider(props) {
         </AuthContext.Provider>
     );
 }
-
 
